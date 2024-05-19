@@ -1,9 +1,10 @@
-//GET
+const express = require("express");
+//Require express and router
+const router = express.Router();
+const { email, phone, birthday, password } = require("@jdols-fs/validator");
 
-//GET BY ID
-
+const { signup } = require("../controllers/signup");
 //POST
+router.post("/signup", email, phone, birthday, password, signup);
 
-//PUT BY ID
-
-//DELETE BY ID
+module.exports = router;
